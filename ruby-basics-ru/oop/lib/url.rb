@@ -7,13 +7,14 @@ require 'forwardable'
 
 class Url
   extend Forwardable
+  include Comparable
 
   def initialize(attribute)
     @uri = URI.parse(attribute)
 
     @hash_key = {}
 
-    str = @uri.query
+    str = @uri.query || ""
     str = str.split(/[=&]/)
              .each_slice(2).to_a
 
@@ -27,7 +28,7 @@ class Url
     @hash_key = hash
 
     def ==(other)
-      @uri.host == other.host
+      @uri.host == other.host && @uri.scheme == other.scheme && @uri.port == other.port
     end
   end
 

@@ -43,4 +43,11 @@ class AppTest < Minitest::Test
 
     assert { last_response.forbidden? }
   end
+
+  def test_adds_runtime_header
+    get '/'
+
+    runtime = last_response.headers['X-Runtime-Microseconds'].to_i
+    assert runtime.positive?, 'Время выполнения должно быть больше нуля'
+  end
 end

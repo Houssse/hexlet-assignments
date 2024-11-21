@@ -7,7 +7,12 @@ class AdminPolicy
 
   def call(env)
     # BEGIN
-    
+    request_path = env['PATH_INFO']
+    if request_path.start_with?('/admin')
+      [403, {}, []]
+    else
+      @app.call(env)
+    end
     # END
   end
 end

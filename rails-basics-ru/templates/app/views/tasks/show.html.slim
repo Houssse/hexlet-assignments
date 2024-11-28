@@ -1,0 +1,9 @@
+ul
+  li = @task.name
+  li = @task.description
+  li = @task.status
+  li = @task.creator
+  li = @task.performer
+  li = @task.completed
+
+= link_to 'delete', task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }

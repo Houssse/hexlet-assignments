@@ -1,0 +1,9 @@
+h1 All tasks
+
+- @tasks.each do |task|
+  h2 = link_to task.name, task_path(task)
+  ul
+    li = task.creator
+    li = task.status
+    li = task.completed
+  = link_to 'edit', edit_task_path(task)

@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails', '~> 7.2'
 
 # BEGIN
-
+gem 'slim-rails'
 # END
 
 gem 'jbuilder'

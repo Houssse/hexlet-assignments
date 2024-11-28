@@ -1,0 +1,12 @@
+<ul>
+<li><%= @task.name %></li>
+<li><%= @task.description %></li>
+<li><%= @task.status %></li>
+<li><%= @task.creator %></li>
+<li><%= @task.performer %></li>
+<li><%= @task.completed %></li>
+</ul>
+  <%= link_to 'delete', task_path(@task), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>

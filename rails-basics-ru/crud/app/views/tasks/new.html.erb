@@ -1,0 +1,35 @@
+<%= form_with model: @task, local: true do |f| %>
+  <div>
+    <%= f.label :name, 'Task Name' %>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :status, 'Status' %>
+    <%= f.select :status, Task::STATUSES.map { |s| [s.humanize, s] }, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :creator, 'Creator' %>
+    <%= f.text_field :creator, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :performer, 'Performer' %>
+    <%= f.text_field :performer %>
+  </div>
+
+  <div>
+    <%= f.label :completed, 'Completed' %>
+    <%= f.check_box :completed %>
+  </div>
+
+  <div>
+    <%= f.submit 'Create Task' %>
+  </div>
+<% end %>

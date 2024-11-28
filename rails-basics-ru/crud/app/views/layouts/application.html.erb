@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
   </head>
 
@@ -20,9 +20,14 @@
     <ul>
       <li><%= link_to 'Home', root_path %></li>
       <%# BEGIN %>
-      
+      <li><%= link_to 'Tasks', tasks_path %>
       <%# END %>
     </ul>
+    <% flash.each do |key, message| %>
+      <div class="<%= key %>">
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

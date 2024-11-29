@@ -25,7 +25,7 @@ gem 'cssbundling-rails'
 
 gem 'slim-rails'
 # BEGIN
-
+gem 'simple_form'
 # END
 gem 'bootsnap', '>= 1.4.4', require: false
 

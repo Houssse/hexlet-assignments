@@ -2,7 +2,18 @@
   = @user.name
 
 / BEGIN
-
+h2 Tasks
+- if @user.task.any?
+  ul
+    - @user.task.each do |task|
+      li
+        = link_to task.name, task_path(task)
+        |  - 
+        = task.status.name
+        |  - 
+        = task.description
+- else
+  p No tasks assigned to this user.
 / END
 hr
 

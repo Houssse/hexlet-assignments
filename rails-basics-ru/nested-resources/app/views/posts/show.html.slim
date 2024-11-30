@@ -1,13 +1,30 @@
-- content_for :title do
-  = @post.title
-p
-  strong.me-2 Body:
-  = @post.body
-/ BEGIN
+h1 = @post.title
 
-/ END
+p
+  strong Body:
+  = @post.body
+
 hr
 
 .d-flex
   = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
-  = link_to 'Back', :back, class: 'btn btn-outline-primary'
+  = link_to 'Back', posts_path, class: 'btn btn-outline-primary'
+
+hr
+
+h3 Add a Comment
+
+= render 'posts/post_comments/form', post: @post, post_comment: @post_comment
+
+h2 Comments
+
+- @post.post_comments.each do |comment|
+  hr
+  p
+    = comment.body
+
+  .d-flex
+    = link_to 'Edit', edit_post_post_comment_path(@post, comment), class: 'btn btn-outline-primary me-2'
+    = link_to 'Delete', post_post_comment_path(@post, comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+
+hr

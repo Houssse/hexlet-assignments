@@ -7,9 +7,15 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please check the problems:"
-    placeholders:
+    labels:
+      post:
+        title: "Title"
+        body: "Body"
       # BEGIN
-      
+    helpers:
+      submit:
+        create: "Create Post"
+        update: "Update Post"
       # END
       post_comment:
         body: Enter comment body

@@ -1,8 +1,36 @@
 ---
 ru:
+  edit: "Редактировать"
+  back: "Назад"
+  show: "Показать"
   posts:
     # BEGIN
-    
+    create:
+      success: "Пост создан."
+    update:
+      success: "Пост обновлен."
+    destroy:
+      success: "Пост удален."
+    index:
+      title: "Посты"
+      title_column: "Заголовок"
+      comments_column: "Комментарии"
+      actions_column: "Действия"
+      show: "Просмотр"
+      edit: "Изменить"
+      destroy: "Удалить"
+      destroy_confirmation: "Вы уверены?"
+      comments_count:
+        zero: "нет комментариев"
+        one: "1 комментарий"
+        other: "%{count} комментариев"
+      new_post: "Новый пост"
+    new:
+      title: "Новый пост"
+    edit:
+      title: "Заголовок"
+    show: 
+      body: "Статья"
     # END
 
     comments:

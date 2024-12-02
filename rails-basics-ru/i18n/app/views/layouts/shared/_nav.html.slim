@@ -8,14 +8,10 @@
         ul.nav.nav-pills.flex-grow-1.navbar-nav
           li.nav-item.me-2
             = link_to root_path, class: 'nav-link link-dark' do
-              / BEGIN
-              
-              / END
+              = t('.home')
           li.nav-item.me-2
             = link_to posts_path, class: 'nav-link link-dark' do
-              / BEGIN
-              
-              / END
+              = t('.posts')
           li.nav-item.d-flex.align-items-center.ms-auto
             - I18n.available_locales.without(I18n.locale).each do |locale|
               = link_to url_for(locale:) do

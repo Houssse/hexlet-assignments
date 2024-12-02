@@ -8,9 +8,15 @@ ru:
       mark: '*'
     error_notification:
       default_message: "Пожалуйста, исправьте ошибки:"
-    placeholders:
+    labels:
+      post:
+        title: "Заголовок"
+        body: "Текст"
       # BEGIN
-      
+    helpers:
+      submit:
+        create: "Создать пост"
+        update: "Обновить пост"
       # END
       post_comment:
         body: Текст

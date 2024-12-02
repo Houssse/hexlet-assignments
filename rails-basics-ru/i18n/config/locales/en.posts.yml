@@ -1,7 +1,35 @@
 en:
+  edit: "Edit"
+  back: "Back"
+  show: "Show"
   posts:
     # BEGIN
-    
+    create:
+      success: "Post was created."
+    update:
+      success: "Post was updated."
+    destroy:
+      success: "Post was destroyed."
+    index:
+      title: "Posts"
+      title_column: "New Post"
+      comments_column: "Comments"
+      actions_column: "Actions"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Delete"
+      destroy_confirmation: "Are you sure?"
+      comments_count:
+        zero: "No comments"
+        one: "1 comment"
+        other: "%{count} comments"
+      new_post: "New Post"
+    new:
+      title: "New Post"
+    edit:
+      title: "Title"
+    show: 
+      body: "text"
     # END
 
     comments:

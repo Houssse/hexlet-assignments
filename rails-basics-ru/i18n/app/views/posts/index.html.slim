@@ -1,20 +1,13 @@
 - content_for :title do
-  / page title (h1)
-  / BEGIN
-  
-  / END
+  h1 = t('posts.index.title')
 
 table.table.table-striped.table-hover.mb-5
   thead
     tr
       th{ scope = 'col' } #
-      th{ scope = 'col' }
-        / table title
-        / BEGIN
-        
-        / END
-      th
-      th
+      th{ scope = 'col' } = t('posts.index.title_column')
+      th{ scope = 'col' } = t('posts.index.comments_column')
+      th{ scope = 'col' } = t('posts.index.actions_column')
 
   tbody
     - @posts.each_with_index do |post, i|
@@ -22,18 +15,11 @@ table.table.table-striped.table-hover.mb-5
         th{ scope = 'row' } = i + 1
         td = post.title
         td
-          / comments count
-          / BEGIN
-          
-          / END
-        td.d-flex
-          / posts links
-          / BEGIN
-          
-          / END
-
-/ new post link
+          - comments_count = post.comments.count
+          = t('posts.index.comments_count', count: comments_count)
+        td.d-flex.gap-2
+          = link_to t('posts.index.show'), post_path(post), class: 'btn btn-outline-primary'
+          = link_to t('posts.index.edit'), edit_post_path(post), class: 'btn btn-outline-secondary'
+          = link_to t('posts.index.destroy'), post_path(post), data: { turbo_method: :delete, turbo_confirm: t('posts.index.destroy_confirmation') }, class: 'btn btn-outline-danger'
 = link_to new_post_path, id: 'new-post-link', class: 'btn btn-primary' do
-  / BEGIN
-  
-  / END
+  = t('posts.index.new_post')

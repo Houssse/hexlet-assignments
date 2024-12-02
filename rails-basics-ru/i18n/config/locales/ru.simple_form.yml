@@ -1,22 +1,21 @@
 ---
 ru:
   simple_form:
-    "yes": 'ДА'
-    "no": 'Нет'
-    required:
-      text: 'обязательное'
-      mark: '*'
+    placeholders:
+      title: "Название"
+      body: "Введите текст поста"
     error_notification:
-      default_message: "Пожалуйста, исправьте ошибки:"
-    labels:
-      post:
-        title: "Заголовок"
-        body: "Текст"
-      # BEGIN
+      default_message: 'Пожалуйста, исправьте ошибки:'
     helpers:
       submit:
-        create: "Создать пост"
-        update: "Обновить пост"
-      # END
-      post_comment:
+        create: Создать Пост
+        update: Обновить пост
+    labels:
+      post:
         body: Текст
+        title: Заголовок
+    'no': Нет
+    required:
+      mark: "*"
+      text: обязательное
+    'yes': ДА

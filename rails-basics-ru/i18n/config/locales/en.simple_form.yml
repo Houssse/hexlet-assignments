@@ -1,21 +1,21 @@
+---
 en:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
-    required:
-      text: 'required'
-      mark: '*'
+    placeholders:
+      title: "Enter post title"
+      body: "Enter post body"
     error_notification:
-      default_message: "Please check the problems:"
-    labels:
-      post:
-        title: "Title"
-        body: "Body"
-      # BEGIN
+      default_message: 'Please check the problems:'
     helpers:
       submit:
-        create: "Create Post"
-        update: "Update Post"
-      # END
-      post_comment:
-        body: Enter comment body
+        create: Create Post
+        update: Update Post
+    labels:
+      post:
+        body: Body
+        title: Title
+    'no': 'No'
+    required:
+      mark: "*"
+      text: required
+    'yes': 'Yes'

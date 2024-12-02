@@ -1,43 +1,39 @@
+---
 en:
-  edit: "Edit"
-  back: "Back"
-  show: "Show"
+  back: Back
+  edit: Edit
   posts:
-    # BEGIN
-    create:
-      success: "Post was created."
-    update:
-      success: "Post was updated."
-    destroy:
-      success: "Post was destroyed."
-    index:
-      title: "Posts"
-      title_column: "New Post"
-      comments_column: "Comments"
-      actions_column: "Actions"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Delete"
-      destroy_confirmation: "Are you sure?"
-      comments_count:
-        zero: "No comments"
-        one: "1 comment"
-        other: "%{count} comments"
-      new_post: "New Post"
-    new:
-      title: "New Post"
-    edit:
-      title: "Title"
-    show: 
-      body: "text"
-    # END
-
     comments:
-      edit:
-        title: Editing comment
-
       create:
         success: Comment was created.
-
+      edit:
+        title: Editing comment
       update:
         success: Comment was updated.
+    create:
+      success: Post was created.
+    destroy:
+      success: Post was destroyed.
+    edit:
+      title: Title
+    index:
+      actions_column: Actions
+      comments_column: Comments
+      comments_count:
+        one: 1 comment
+        other: "%{count} comments"
+        zero: No comments
+      destroy: Delete
+      destroy_confirmation: Are you sure?
+      edit: Edit
+      new_post: New Post
+      show: Show
+      title: Posts
+      title_column: New Post
+    new:
+      title: New Post
+    show:
+      body: text
+    update:
+      success: Post was updated.
+  show: Show

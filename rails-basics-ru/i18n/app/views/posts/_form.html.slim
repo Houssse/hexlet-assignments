@@ -1,4 +1,9 @@
 = simple_form_for @post do |f|
-  = f.input :title, label: t('activerecord.attributes.post.title')
-  = f.input :body, label: t('activerecord.attributes.post.body'), as: :text
+  = f.input :title, 
+            label: t('activerecord.attributes.post.title'),
+            placeholder: t('simple_form.placeholders.title')
+  = f.input :body, 
+            label: t('activerecord.attributes.post.body'), 
+            as: :text,
+            placeholder: t('simple_form.placeholders.body')
   = f.submit @post.new_record? ? t('simple_form.helpers.submit.create') : t('simple_form.helpers.submit.update'), class: 'btn btn-success'

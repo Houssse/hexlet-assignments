@@ -1,19 +1,20 @@
+---
 en:
   activerecord:
-    models:
-      post: "Post"
-      post/comment: "Comment"
     attributes:
       post:
-        title: "Title"
-        body: "Body"
+        body: Body
+        title: Title
       post/comment:
-        body: "Body"
+        body: Body
     errors:
       models:
         post:
           attributes:
-            title:
-              blank: "should be filled"
             body:
-              blank: "can't be blank"
+              blank: can't be blank
+            title:
+              blank: should be filled
+    models:
+      post: Post
+      post/comment: Comment

@@ -1,28 +1,27 @@
+---
 en:
+  comments:
+    submit:
+      create: Add Comment
+  destroy: Delete
+  destroy_confirmation: Are you sure?
   footer:
-    copyright: "Hexlet"
+    copyright: Hexlet
   home:
     index:
-      title: "Home page"
+      title: Home page
   layouts:
     application:
-      default_title: "My Application"
+      default_title: My Application
     shared:
       nav:
-        hexlet_logo: "Hexlet Logo"
-        home: "Home"
-        posts: "Posts"
+        hexlet_logo: Hexlet Logo
+        home: Home
+        posts: Posts
   posts:
-    show:
-      comments: "Comments"
     index:
       comments_count:
-        zero: "No comments"
-        few: "1 comment"
+        few: 1 comment
         many: "%{count} comments"
-  helpers:
-    submit:
-      create: "Create Post"
-      update: "Update Post"
-  destroy: "Delete"
-  destroy_confirmation: "Are you sure?"
+    show:
+      comments: Comments

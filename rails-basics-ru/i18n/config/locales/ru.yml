@@ -1,28 +1,27 @@
+---
 ru:
-  helpers:
+  comments:
     submit:
-      create: "Создать пост"
-      update: "Обновить пост"
+      create: Добавить комментарий
+  destroy: Удалить
+  destroy_confirmation: Вы уверены?
   footer:
-    copyright: "Хекслет"
+    copyright: Хекслет
   home:
     index:
-      title: "Домашняя страница"
+      title: Домашняя страница
   layouts:
     application:
-      default_title: "Мое приложение"
+      default_title: Мое приложение
     shared:
       nav:
-        hexlet_logo: "Логотип Хекслета"
-        home: "Домой"
-        posts: "Посты"
+        hexlet_logo: Логотип Хекслета
+        home: Домой
+        posts: Посты
   posts:
-    show:
-      comments: "Комментарии"
     index:
       comments_count:
-        zero: "Нет комментариев"
-        few: "1 комментарий"
+        few: 1 комментарий
         many: "%{count} комментариев"
-  destroy: "Удалить"
-  destroy_confirmation: "Вы уверены?"
+    show:
+      comments: Комментарии

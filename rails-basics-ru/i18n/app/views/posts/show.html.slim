@@ -28,7 +28,7 @@ p
 
   = simple_form_for @post.comments.build, url: post_comments_path(@post) do |f|
     = f.input :body, label: false, as: :text
-    = f.submit class: 'btn btn-primary'
+    = f.submit t('comments.submit.create'), class: 'btn btn-primary'
 hr
 
 .d-flex

@@ -1,11 +1,11 @@
 namespace :hexlet do
-  desc "Импорт пользователей из CSV-файла"
+  desc 'Импорт пользователей из CSV-файла'
   task import_users: :environment do |_task, args|
     require 'csv'
 
     file_path = args.extras[0]
     unless file_path && File.exist?(file_path)
-      puts "Укажите корректный путь к CSV-файлу"
+      puts 'Укажите корректный путь к CSV-файлу'
       exit 1
     end
 
@@ -18,7 +18,7 @@ namespace :hexlet do
           updated_at: row['updated_at']
         )
       end
-      puts "Импорт завершен успешно!"
+      puts 'Импорт завершен успешно!'
     rescue StandardError => e
       puts "Ошибка при импорте: #{e.message}"
       exit 1

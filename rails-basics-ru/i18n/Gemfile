@@ -28,7 +28,8 @@ gem 'simple_form'
 gem 'slim-rails'
 
 # BEGIN
-
+gem 'i18n-debug'
+gem 'rails-i18n'
 # END
 
 group :development, :test do

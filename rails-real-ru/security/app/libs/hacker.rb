@@ -33,10 +33,8 @@ class Hacker
 
     def token(html)
       doc = Nokogiri::HTML(html)
-      csrf_meta = doc.at('meta[name="csrf-token"]')
-
-      csrf_token = csrf_meta['content'] if csrf_meta
-
+      csrf_input = doc.at('input[name="authenticity_token"]') # Ищем input с нужным именем
+      csrf_token = csrf_input['value'] if csrf_input          # Берём значение из атрибута 'value'
       csrf_token
     end
   end

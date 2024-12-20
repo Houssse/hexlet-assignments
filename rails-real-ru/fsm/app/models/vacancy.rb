@@ -7,6 +7,18 @@ class Vacancy < ApplicationRecord
   validates :description, presence: true
 
   # BEGIN
+  aasm do
+    state :on_moderate, initial: true
+    state :published
+    state :archived
   
+    event :publish do
+      transitions from: :on_moderate, to: :published
+    end
+  
+    event :archive do
+      transitions from: [:on_moderate, :published], to: :archived
+    end
+  end
   # END
 end

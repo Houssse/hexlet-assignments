@@ -5,7 +5,10 @@
 
 .p-3.bg-light
   / BEGIN
-  
+  = search_form_for @q do |f|
+    = f.input :title_cont, placeholder: 'Search by title'
+    = f.submit 'Search'
+    = sort_link(@q, :aasm_state, 'State')
   / END
 
 table.table.table-striped.table-hover.mb-5

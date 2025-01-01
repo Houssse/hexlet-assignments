@@ -11,6 +11,10 @@ hr
 
 .d-flex
   / BEGIN
-  
+  - if policy(@post).update?
+    = link_to 'Edit', edit_post_path(@post)
+
+  - if policy(@post).destroy?
+    = link_to 'Delete', data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
   / END
   = link_to t('back'), :back, class: 'btn btn-outline-primary'

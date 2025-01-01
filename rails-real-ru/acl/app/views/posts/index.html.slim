@@ -21,7 +21,11 @@ table.table.table-striped.table-hover.mb-5
           / posts links
           = link_to t('show'), post, class: 'me-4'
           / BEGIN
-          
+          - if policy(post).update?
+            = link_to 'Edit', edit_post_path(post)
+
+          - if policy(post).destroy?
+            = link_to 'Delete', post_path(post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
           / END
 
 / new post link

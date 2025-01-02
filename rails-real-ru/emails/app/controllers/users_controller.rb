@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     if @user.save
       # BEGIN
-      
+
       # END
 
       sign_in @user

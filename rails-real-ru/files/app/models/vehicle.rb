@@ -2,7 +2,7 @@
 
 class Vehicle < ApplicationRecord
   # BEGIN
-  
+  has_one_attached :image
   # END
 
   validates :manufacture, presence: true
@@ -13,6 +13,9 @@ class Vehicle < ApplicationRecord
   validates :production_year, presence: true
 
   # BEGIN
-  
+  validates :image,
+              attached: true,
+              content_type: ['image/png', 'image/jpg', 'image/jpeg'],
+              size: { less_than: 5.megabytes }
   # END
 end

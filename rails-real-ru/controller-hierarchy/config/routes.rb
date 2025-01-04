@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
     resources :movies do
       # BEGIN
-      
+      resources :comments, only: %i[index new create edit update destroy], module: :movies
+      resources :reviews, only: %i[index new create edit update destroy], module: :movies
       # END
     end
 

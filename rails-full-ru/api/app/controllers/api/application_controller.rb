@@ -2,6 +2,6 @@
 
 class Api::ApplicationController < ApplicationController
   # BEGIN
-  
+  respond_to :json
   # END
 end

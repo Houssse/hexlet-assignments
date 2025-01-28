@@ -4,7 +4,24 @@ require 'csv'
 
 class Web::UsersController < Web::ApplicationController
   # BEGIN
-  
+  def stream_csv
+    headers['Content-Type'] = 'text/csv'
+    headers['Content-Disposition'] = 'attachment; filename="report.csv"'
+    headers['Last-Modified'] = User.maximum(:updated_at)&.httpdate || Time.now.httpdate
+
+    response.stream.write "id,name,email,created_at,updated_at\n"
+    User.find_each do |user|
+      response.stream.write [
+        user.id,
+        user.name,
+        user.email,
+        user.created_at,
+        user.updated_at
+      ].to_csv
+    end
+  ensure
+    response.stream.close
+  end
   # END
 
   def index

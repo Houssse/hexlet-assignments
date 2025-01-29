@@ -14,21 +14,29 @@ class Web::RepositoriesController < Web::ApplicationController
   end
 
   def create
-    # BEGIN
-    
-    # END
+    repository = Repository.new(permitted_params)
+
+    if repository.save
+      RepositoryLoaderJob.perform_now(repository.id)
+      redirect_to repositories_path, notice: 'Репозиторий добавлен и загружается'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
-    # BEGIN
-    
-    # END
+    repository = Repository.find(params[:id])
+    RepositoryLoaderJob.perform_now(repository.id)
+
+    redirect_to repositories_path, notice: 'Загрузка обновленных данных запущена'
   end
 
   def update_repos
-    # BEGIN
-    
-    # END
+    Repository.order(:updated_at).each do |repository|
+      RepositoryLoaderJob.perform_now(repository.id)
+    end
+
+    redirect_to repositories_path, notice: 'Обновление всех репозиториев запущено'
   end
 
   def destroy

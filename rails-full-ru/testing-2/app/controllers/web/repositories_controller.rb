@@ -19,7 +19,36 @@ class Web::RepositoriesController < Web::ApplicationController
 
   def create
     # BEGIN
-    
+    repository_url = params[:repository_url]
+
+    begin
+      octokit_repo = Octokit::Repository.from_url(repository_url)
+
+      client = Octokit::Client.new
+      repository_data = client.repository(octokit_repo)
+
+      @repository = Repository.new(
+        link: repository_data.html_url,
+        owner_name: repository_data.owner.login,
+        repo_name: repository_data.name,
+        description: repository_data.description,
+        default_branch: repository_data.default_branch,
+        watchers_count: repository_data.watchers_count,
+        language: repository_data.language,
+        repo_created_at: repository_data.created_at,
+        repo_updated_at: repository_data.updated_at
+      )
+
+      if @repository.save
+        redirect_to @repository, notice: 'Repository successfully added!'
+      else
+        render :new, status: :unprocessable_entity
+      end
+    rescue Octokit::NotFound
+      redirect_to repositories_url, alert: 'Repository not found.'
+    rescue StandardError => e
+      redirect_to repositories_url, alert: "Something went wrong: #{e.message}"
+    end
     # END
   end
 

@@ -42,7 +42,7 @@ gem 'simple_form'
 gem 'slim-rails'
 
 # BEGIN
-
+gem 'octokit'
 # END
 
 group :development, :test do
@@ -73,7 +73,7 @@ group :test do
   gem 'webdrivers'
 
   # BEGIN
-  
+  gem 'webmock'
   # END
 end
 

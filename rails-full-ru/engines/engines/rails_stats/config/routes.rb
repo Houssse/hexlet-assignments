@@ -2,6 +2,7 @@
 
 RailsStats::Engine.routes.draw do
   # BEGIN
-  
+  root to: 'stats#index'
+  resources :stats
   # END
 end

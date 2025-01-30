@@ -26,7 +26,8 @@ Rails.application.configure do
     config.action_controller.enable_fragment_cache_logging = true
 
     # BEGIN
-    
+    config.cache_store = :file_store, '/tmp/cache'
+    config.action_controller.perform_caching = true
     # END
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
